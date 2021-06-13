@@ -4,17 +4,14 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.example.entity.User;
 import com.example.repository.IMongoDBUserRepository;
 
 @Service
-@Qualifier("mongodb-service")
 public class MongoDBUserService implements IUserService {
 	
-	@Autowired(required = false)
-	@Qualifier("mongodb-repository")
+	@Autowired
 	IMongoDBUserRepository repository;
 	
 	public MongoDBUserService() {

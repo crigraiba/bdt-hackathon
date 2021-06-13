@@ -9,8 +9,8 @@ public class GitLabUser {
 	
 	private String username;
 	private String url;
+	private String repositoriesUrl;
 	private String[] repositories;
-	private String[] repositoriesURL;
 	
 	// Método constructor:
 	public GitLabUser() {
@@ -29,6 +29,14 @@ public class GitLabUser {
 		this.url = url;
 	}
 	
+	public void setRepositoriesUrl(String repositoriesUrl) {
+		this.repositoriesUrl = repositoriesUrl;
+	}
+	
+	public void setRepositories(String[] repositories) {
+		this.repositories = repositories;
+	}
+	
 	// Mètodos getter:
 	public int getId() {
 		return id;
@@ -40,6 +48,14 @@ public class GitLabUser {
 	
 	public String getUrl() {
 		return url;
+	}
+	
+	public String getRepositoriesUrl() {
+		return repositoriesUrl;
+	}
+	
+	public String[] getRepositories() {
+		return repositories;
 	}
 	
 }

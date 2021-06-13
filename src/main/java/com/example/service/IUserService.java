@@ -1,7 +1,7 @@
 package com.example.service;
 
-import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.HttpURLConnection;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.Optional;

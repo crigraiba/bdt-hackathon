@@ -2,11 +2,7 @@ package com.example.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
 
 import com.example.service.MongoDBUserService;
-import com.example.service.PostgreSQLUserService;
+//import com.example.service.PostgreSQLUserService;
 import com.example.entity.User;
 import com.example.entity.GitHubUser;
 import com.example.entity.GitLabUser;
@@ -31,10 +27,8 @@ import com.example.controller.exception.GitLabUserNotFoundException;
 public class UserRestController {
 	
 	@Autowired
-	@Qualifier("mongodb-service")
 	MongoDBUserService service;
-	// @Qualifier("postgresql-service")
-	// PostgreSQLUserService service;
+	//PostgreSQLUserService service;
 		
 	// Lectura:
 	/**
