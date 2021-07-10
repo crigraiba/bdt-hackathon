@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.entity.Country;
+import com.example.domain.Country;
 import com.example.service.CountryService;
 
 @RestController

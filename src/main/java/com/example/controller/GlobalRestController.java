@@ -1,10 +1,11 @@
 package com.example.controller;
 
 import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.domain.User;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import com.example.entity.User;
 
 public class GlobalRestController {
 	
@@ -23,7 +24,7 @@ public class GlobalRestController {
 	 * @return
 	 */
 	
-	@GetMapping("/login")
+	@PostMapping("/login")
 	public String login(@RequestBody User user) {
 		return null;
 	}

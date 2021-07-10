@@ -7,9 +7,11 @@ import java.util.Scanner;
 import java.util.Optional;
 
 import org.json.JSONObject;
+import org.springframework.stereotype.Service;
 
-import com.example.entity.User;
+import com.example.domain.User;
 
+@Service
 public interface IUserService {
 	
 	// Lectura:
@@ -40,7 +42,7 @@ public interface IUserService {
 	default boolean isEmailVerified(String email) throws IOException {
 		// Obtenemos los datos mediante una petición HTTP GET:
 		
-		String accessKey = "c4fe427599e7cbe57421c8d3398b7a37";
+		String accessKey = System.getenv().get("ACCESS_TOKEN");
 		
 		URL url = new URL("https://apilayer.net/api/check?access_key=" + accessKey + "&email=" + email + "&smtp=1&format=1");
 		

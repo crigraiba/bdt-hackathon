@@ -5,13 +5,13 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.example.entity.User;
-import com.example.repository.IMongoDBUserRepository;
+import com.example.domain.User;
+import com.example.repository.mongo.IMongoDBUserRepository;
 
 @Service
 public class MongoDBUserService implements IUserService {
 	
-	@Autowired
+	@Autowired(required = false)
 	IMongoDBUserRepository repository;
 	
 	public MongoDBUserService() {

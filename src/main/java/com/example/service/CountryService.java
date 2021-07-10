@@ -10,7 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
-import com.example.entity.Country;
+import com.example.domain.Country;
 
 @Service
 public class CountryService {
@@ -60,7 +60,7 @@ public class CountryService {
 			
 			country.setId(i);
 			country.setName(jsonCountry.getString("name"));
-			country.setAlphaCode(new String[] {jsonCountry.getString("alpha2Code"), jsonCountry.getString("alpha3Code")});
+			country.setAlphaCodes(new String[] {jsonCountry.getString("alpha2Code"), jsonCountry.getString("alpha3Code")});
 						
 			jsonCallingCodes = jsonCountry.getJSONArray("callingCodes");
 			callingCodes = new String[jsonCallingCodes.length()];

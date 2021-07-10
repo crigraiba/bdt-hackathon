@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
 
 import com.example.service.MongoDBUserService;
-//import com.example.service.PostgreSQLUserService;
-import com.example.entity.User;
-import com.example.entity.GitHubUser;
-import com.example.entity.GitLabUser;
 import com.example.controller.exception.UserNotFoundException;
+import com.example.domain.GitHubUser;
+import com.example.domain.GitLabUser;
+import com.example.domain.User;
 import com.example.controller.exception.GitHubUserNotFoundException;
 import com.example.controller.exception.GitLabUserNotFoundException;
 
@@ -39,8 +38,7 @@ public class UserRestController {
 	
 	@GetMapping("/{id}")
 	public User readById(@PathVariable String id) {
-		User user = service.readById(id).orElseThrow(() -> new UserNotFoundException(id));
-		return user;
+		return service.readById(id).orElseThrow(() -> new UserNotFoundException(id));
 	}
 	
 	// Creación:
@@ -87,7 +85,7 @@ public class UserRestController {
 	
 	// Lectura:
 	/**
-	 * Devuelve un usuario de GitHub asociado a un usuario a través del
+	 * Devuelve el usuario de GitHub asociado a un usuario a través del
 	 * ID del usuario.
 	 * @param id
 	 * @return
@@ -104,7 +102,7 @@ public class UserRestController {
 	}
 
 	/**
-	 * Devuelve un usuario de GitLab asociado a un usuario a través del
+	 * Devuelve el usuario de GitLab asociado a un usuario a través del
 	 * ID del usuario.
 	 * @param id
 	 * @return

@@ -8,7 +8,7 @@ import java.util.Scanner;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
-import com.example.entity.GitHubUser;
+import com.example.domain.GitHubUser;
 
 @Service
 public class GitHubUserService {
@@ -47,6 +47,9 @@ public class GitHubUserService {
 		gitHubUser.setUrl(jsonGitHubUser.getString("url"));
 		gitHubUser.setRepositoriesUrl(jsonGitHubUser.getString("repos_url"));
 		//gitHubUser.setRepositories(jsonGitHubUser.getString(""));
+		
+		System.out.println(gitHubUser.toString());
+		System.out.println(System.getenv().get("ACCESS_TOKEN"));
 	}
 	
 }
